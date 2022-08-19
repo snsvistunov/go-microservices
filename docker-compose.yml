@@ -1,0 +1,19 @@
+version: '3.8'
+services: 
+      auth-app:
+        build: 
+          context: go-auth-service
+          dockerfile: Dockerfile
+        container_name: go-auth-service
+      user-app:
+        build: 
+          context: go-user-service
+          dockerfile: Dockerfile
+        container_name: go-user-service
+      proxy-app:
+        build: 
+          context: go-proxy-service
+          dockerfile: Dockerfile
+        ports: 
+            - "8888:8888"
+        container_name: go-proxy-service
