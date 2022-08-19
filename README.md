@@ -88,6 +88,7 @@ It will run Authenticator-Microservice, User-Microservice, Proxy-Microservice.
 You can access to the app via Proxy-Microservice:   
 
 http://127.0.0.1:8888/user/profile
+
 http://127.0.0.1:8888/microservice/name
 
 Stop application:
