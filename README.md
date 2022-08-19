@@ -117,7 +117,7 @@ All demo data is included in the application code (hardcoded).
 
 The data for the User-Service service is located in the directory `go-user-service/data/users.go`.
 
-```
+```go
 var Users = map[string]models.User{
 	"Uncle Bob": {
 		Username:    "Uncle Bob",
@@ -160,7 +160,7 @@ var Users = map[string]models.User{
 
 The data for the Auth-Service service is located in the directory `go-auth-service/data/users.go`.
 
-```
+```go
 var Users = map[string]models.User{
 	"Uncle Bob": {
 		Username:   "Uncle Bob",
