@@ -1,7 +1,6 @@
 package proxy
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"net/http/httputil"
@@ -22,7 +21,12 @@ func ReverseProxy(c *gin.Context) {
 		log.Fatal(err)
 	}
 	if *c.Request.URL == *requestURL {
-		fmt.Printf("Username from header %v", c.Request.Header["Username"][0])
+		headers := c.Request.Header
+		_, ok := headers["Content-Type"]
+		if !ok {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "bad request"})
+			return
+		}
 		if !checkAuth(c.Request.Header["Username"][0]) {
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "request is unauthorized"})
 			return
