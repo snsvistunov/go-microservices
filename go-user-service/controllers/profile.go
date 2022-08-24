@@ -15,5 +15,5 @@ func GetUserProfile(context *gin.Context) {
 		context.SecureJSON(http.StatusOK, gin.H{"UserProfile": user})
 		return
 	}
-	context.JSON(http.StatusOK, gin.H{"Error": "user not found"})
+	context.JSON(http.StatusNotFound, gin.H{"Error": "user not found"})
 }
