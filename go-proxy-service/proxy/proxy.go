@@ -22,7 +22,7 @@ func ReverseProxy(c *gin.Context) {
 	}
 	if *c.Request.URL == *requestURL {
 		headers := c.Request.Header
-		_, ok := headers["Content-Type"]
+		_, ok := headers["Username"]
 		if !ok {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "bad request"})
 			return
